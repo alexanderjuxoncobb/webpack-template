@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#title {
+  background-color: rgb(165, 234, 255);
+  margin: 10px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image-container {
+  position: relative;
+  width: 100%; /* Set your desired width */
+}
+
+.image-container img {
+  width: 100%; /* Makes the image responsive */
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 100px; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for true center */
+  color: white; /* Text color */
+  font-size: 24px; /* Adjust size as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional shadow for contrast */
+  background: rgba(0, 0, 0, 0.3); /* Optional semi-transparent background */
+  padding: 10px;
+  border-radius: 5px; /* Optional rounded corners */
+}
