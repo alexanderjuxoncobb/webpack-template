@@ -32,4 +32,22 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    proxy: [
+      {
+        context: ["/api"],
+        target: "http://localhost:5001",
+        changeOrigin: true,
+        secure: false,
+        ws: true,
+      },
+    ],
+    client: {
+      webSocketURL: {
+        hostname: "localhost",
+        pathname: "/ws",
+        port: 8080,
+      },
+    },
+  },
 };
