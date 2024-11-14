@@ -1,6 +1,7 @@
 // webpack.config.js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   mode: "development",
@@ -15,6 +16,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/template.html",
     }),
+    new webpack.HotModuleReplacementPlugin(), // Add HMR plugin
   ],
   module: {
     rules: [
@@ -49,5 +51,7 @@ module.exports = {
         port: 8080,
       },
     },
+    hot: true, // Enable HMR here
+    watchFiles: ["src/**/*"], // Watches changes in the src folder
   },
 };
