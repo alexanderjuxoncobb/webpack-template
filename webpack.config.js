@@ -41,6 +41,17 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource'
+      },
+      {
+        test: /\.(?:js|mjs|cjs)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            targets: { browsers: ['> 0.25%, not dead', 'ie 11'] }, // targets: 'defaults',
+            presets: [['@babel/preset-env']]
+          }
+        }
       }
     ]
   },
